@@ -40,6 +40,8 @@ Template.body.events({
   },
 });
 
+
+
 Template.agreementPage.helpers({
 	agreements() {
 		return Agreements.find({});
@@ -47,9 +49,42 @@ Template.agreementPage.helpers({
 });
 
 Template.agreementPage.events({
-	'click #addAgreement'(e) {
+	'click #addAgreement'() {
 		document.getElementById("new-agreement-popup").style.display = 'block';
 	},
+
+	'click #back'(e) {
+		document.getElementById("agreement-page").style.display = 'none';
+		document.getElementById("main").style.display = 'block';
+	},
+
+	'submit #new-agreement-form'(event) {
+		
+    	// Prevent default browser form submit
+    	event.preventDefault();
+ 
+    	// Get value from form element
+    	const target = event.target;
+    	const title = target.title.value;
+    	const description = target.description.value;
+
+    	// Insert a task into the collection
+	    Agreements.insert({
+	    	title: title,
+	    	description: description,
+	    	approved : false,
+	    	agreedMembers: [String(Meteor.userId())],
+	    	createdAt : new Date(),
+   		});
+ 
+    	// Clear form
+    	target.title.value = '';
+    	target.description.value = '';
+
+
+    	//hide pop-up
+    	document.getElementById("new-agreement-popup").style.display = 'none';
+  },
 });
 
 Template.agreement.helpers({
@@ -75,8 +110,6 @@ Template.agreement.events({
 	 	agreedMembers = Template.currentData().agreedMembers;
 	 	agreedMembers.push(String(Meteor.userId()));
 
-
-
 	 	agreements = Agreements.find().fetch();
 	 	var id;
 
@@ -89,6 +122,9 @@ Template.agreement.events({
 	 	Agreements.update(id, {
 	      $set: { agreedMembers: agreedMembers },
 	    });
+
+	 	console.log(agreedMembers.length);
+	 	console.log(Users.find().fetch().length);
 
 	    if(agreedMembers.length == Users.find().fetch().length) {
 	 		Agreements.update(id, {

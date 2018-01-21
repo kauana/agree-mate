@@ -1,6 +1,8 @@
 
 <template name="agreementPage">
     <div id="agreement-page" class="page">
+    	<img src="" id="back">
+
     	<h2 id="agreement-header">Agreement</h2>
     	<img id="contract-icon-2" src="/images/contract_2.png">
 
@@ -15,9 +17,11 @@
     	<!-- <img id="add-icon2" src="/images/testplus.png"> -->
 
     	<div id="new-agreement-popup" class="popup">
-    		<form>
-    			<input type="text" name="title" id="title-input">
-    			<input type="text" name="description" id="description-input">
+    		<form id="new-agreement-form">
+    			<input type="text" name="title" id="title-input" placeholder="title">
+    			<input type="text" name="description" id="description-input" placeholder="description">
+    			<input type="submit" name="create" value="create">
+    			<!-- <input type="submit" name="cancel" value="cancel"> -->
     		</form>
     	</div>
   	</div>

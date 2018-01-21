@@ -124,6 +124,8 @@ header .hide-completed {
   }
 }
 
+
+
 #logo {
   width: 80px;
   height: 80px;
@@ -157,6 +159,11 @@ header .hide-completed {
 	color: white;
 	font-size: 16px;
 	font-weight: 100;
+}
+
+#back {
+  width: 20px;
+  height: 20px;
 }
 
 #agreement {
@@ -283,6 +290,10 @@ header .hide-completed {
   -moz-appearance: none;
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type="text"] {
+  height: 20px;
 }
 
 #shopping-list {
