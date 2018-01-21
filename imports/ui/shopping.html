@@ -7,10 +7,10 @@
 
       <div class="list-item">
       </div>
+
       {{#each shoppingList}}
         {{> item}}
       {{/each}}
-
 
       
       <div id="new-item-wrapper">
@@ -20,19 +20,6 @@
         <img id="add-icon-1" src="/images/add.png">
       </div>
 
-     <!--  <div id="new-item-popup" class="popup">
-        <form id="new-agreement-form">
-          
-          <div id="form-button-wrapper">
-            <input type="text" name="title" id="title-input" placeholder="title">
-            <img id="cancel-agreement" src="/images/cancel.png">
-            </div>
-          
-          <input type="text" name="description" id="description-input" placeholder="description">
-          <input type="submit" name="create" value="create" id="submit-agreement">
-          
-        </form>
-      </div> -->
     </div>
 
     
@@ -50,32 +37,5 @@
 
 </template>
 
-
-<!-- <template name="agreement"> -->
-  
-  <!-- <div id="{{_id}}" class="agreement {{#if approved}}accepted{{else}}pending{{/if}}">
-      <h4>{{title}}</h4>
-      <p>{{description}}</p>
-      <img src=""/>
-      {{#if approved}}
-        <img class="approved-icon" src="/images/approved_1.png"/>
-      {{else}}
-        {{#if hasChecked}}
-          <div id="pending-wrapper">
-            <img class="pending-icon" src="/images/pending.png"/>
-          </div>
-        {{else}}
-          <div id="icon-wrapper">
-            <img id="accept-icon" class="agreement-icon" src="/images/accept-icon.png">
-          </div>
-          <div>
-            <img id="deny-icon" class="agreement-icon" src="/images/deny-icon.png">
-          </div>
-        {{/if}}
-      {{/if}}
-      
-    </div> -->
-
-<!-- </template> --> 
 
         

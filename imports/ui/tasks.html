@@ -1,7 +1,16 @@
 <template name="tasksPage">
+  <div id="tasks-page" class="page">
+    <img src="/images/back.png" class="back">
+    <img src="/images/task-page.png" id="task-mock-up">
+  </div>
+</template>
+
+<template name="tasksPageFinal">
     <div id="tasks-page" class="page">
        <img src="/images/back.png" id="back">
       
+
+
        <h2 id="tasks-header">Task Tracker</h2>
        
        {{#each tasks}} <!--When > 1 week need to change to only show 1-->

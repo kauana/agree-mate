@@ -32,10 +32,10 @@ Template.body.events({
     	document.getElementById("agreement-page").classList.remove("page");
     } else if(id == "shopping-list" || id2 == "shopping-list") {
     	document.getElementById("shopping-page").classList.remove("page");
-    } else if(id == "tasks") {
+    } else if(id == "tasks" || id2== "tasks") {
     	document.getElementById("tasks-page").classList.remove("page");
     } else {
-
+    	document.getElementById("rent-page").classList.remove("page");
     }
 
     document.getElementById("main").style.display = 'none';
@@ -81,6 +81,8 @@ Template.agreementPage.events({
     	// Clear form
     	target.title.value = '';
     	target.description.value = '';
+
+
 
 
     	//hide pop-up
@@ -216,7 +218,7 @@ Template.tasksPage.events({
                 document.getElementById("new-item-popup").style.display = 'block';
         },
 
-        'click #back'(e) {
+        'click .back'(e) {
                 document.getElementById("tasks-page").classList.add("page");
                 document.getElementById("main").style.display = 'block';
         },
@@ -263,61 +265,15 @@ Template.item.events({
 	 	
 
      },
-
-    'submit #new-item-form'(event) {
-
-	}
-     // Prevent default browser form submit
-     // event.preventDefault();
-
-
-     	// Get value from form element
-
-    	// const target = event.target;
-
-    	// const item = target.item.value;
-
-     //  const type = target.type.value;
-
-   	//If it's an extra item person who added is immediately pitched in
-
-
-
-    	// Insert a task into the collection
-
-     //  shoppingList.insert({
-
-     //    item: item,
-
-     //    type: type,
-
-     //  	bought : false,
-
-     //  	pitchedIn: [String(Meteor.userId())], //add user who added item if extra item
-
-     //  	createdAt : new Date(),
-
-   		// });
-
-    
-
-      // Clear form
-
-      // target.title.value = '';
-
-      // target.description.value = '';
-
-
-
-
-
-      //hide pop-up
-
-      // document.getElementById("new-agreement-popup").style.display = 'none';    
-
   });
 
-    
+Template.rentPage.events({
 
+	'click .back'() {
+		document.getElementById("rent-page").classList.add("page");
+		document.getElementById("main").style.display = 'block';
+
+	},
+});
 
 
