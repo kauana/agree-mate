@@ -16,7 +16,7 @@ import './shopping.html';
 
 import './rent.html';
 
-import './task.html';
+import './tasks.html';
 
 Template.body.helpers({
 
@@ -33,7 +33,7 @@ Template.body.events({
     } else if(id == "shopping-list" || id2 == "shopping-list") {
     	document.getElementById("shopping-page").classList.remove("page");
     } else if(id == "tasks") {
-    	document.getElementById("agreement-page").classList.remove("page");
+    	document.getElementById("tasks-page").classList.remove("page");
     } else {
 
     }
