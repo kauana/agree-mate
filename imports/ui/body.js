@@ -1,3 +1,5 @@
+import { Meteor } from 'meteor/meteor';
+
 import { Template } from 'meteor/templating';
  
 import { Agreements } from '../api/agreements.js';
@@ -11,6 +13,10 @@ import './shopping.html';
 import './rent.html';
 
 import './task.html';
+
+Template.body.helpers({
+
+});
 
 Template.body.events({
   'click .nav-button'(e) {
@@ -39,13 +45,63 @@ Template.agreementPage.helpers({
 });
 
 Template.agreement.helpers({
-	approvedColor() {
-		return "#e65d25";
-	},
+	hasChecked() {
+		var ids = Template.currentData().agreedMembers;
+		for (var i = ids.length - 1; i >= 0; i--) {
 
-	pendingColor() {
-		return "#eee";
+			if(ids[i] == String(Meteor.userId())) {
+				return true;
+			}
+		}
+
+		return false;
 	}
+});
+
+Template.agreement.events({
+	'click #accept-icon'(e) {
+
+	 	var idString = e.target.parentElement.parentElement.id;
+	 	idString = idString.slice(10,idString.indexOf("\")"));
+
+	 	agreedMembers = Template.currentData().agreedMembers;
+	 	agreedMembers.push(String(Meteor.userId()));
+
+	 	agreements = Agreements.find().fetch();
+	 	var id;
+
+	 	for (var i = agreements.length - 1; i >= 0; i--) {
+	 		if(String(agreements[i]._id._str) == idString) {
+	 			id = agreements[i]._id;
+	 		}
+	 	}
+
+	 	Agreements.update(id, {
+	      $set: { agreedMembers: agreedMembers },
+	    });
+
+	 },
+	 'click #deny-icon'(e) {
+
+
+	 	var idString = e.target.parentElement.parentElement.id;
+	 	idString = idString.slice(10,idString.indexOf("\")"));
+
+	 	agreedMembers = Template.currentData().agreedMembers;
+	 	agreedMembers.push(String(Meteor.userId()));
+
+	 	agreements = Agreements.find().fetch();
+	 	var id;
+
+	 	for (var i = agreements.length - 1; i >= 0; i--) {
+	 		if(String(agreements[i]._id._str) == idString) {
+	 			id = agreements[i]._id;
+	 		}
+	 	}
+
+	 	Agreements.remove(id);
+
+	 },
 });
 
 

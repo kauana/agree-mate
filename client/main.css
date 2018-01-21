@@ -124,6 +124,14 @@ header .hide-completed {
   }
 }
 
+#logo {
+  width: 80px;
+  height: 80px;
+  float: right;
+  margin-right: -20px;
+  margin-top: -18px;
+}
+
 .page {
   display: none;
 } 
@@ -163,14 +171,15 @@ header .hide-completed {
 
 #contract-icon-2 {
   margin: 0 auto;
-  margin-top: -40px;
-  width: 30px;
-  height: 30px;
-  float: right;
+  margin-top: -60px;
+  width: 50px;
+  height: 50px;
+  float: left;
 }
 
 #agreement-header {
   color: #e65d25;
+  margin-left: 55px;
 }
 
 #agreement-page {
@@ -179,8 +188,33 @@ header .hide-completed {
   margin-top: 20px;
 }
 
-.status-icon {
+.approved-icon {
   width: 50px;
+  float: right;
+  margin: 0 auto;
+  margin-top: -55px;  
+}
+
+.pending-icon {
+  width: 50px;
+  margin-left: -1px;
+}
+
+.agreement-icon {
+  float: right;
+  width: 60px;
+}
+
+#icon-wrapper {
+  margin-top: -65px;
+}
+
+#pending-wrapper {
+  width: 48px;
+  height: 48px;
+  background-color: darkgrey;
+  border-radius: 50px;
+
   float: right;
   margin: 0 auto;
   margin-top: -55px;  
@@ -188,10 +222,6 @@ header .hide-completed {
 
 .agreement {
   height: 60px;
- 
-
-  background-color: #e65d25;
-
   
   margin-bottom: 20px;
 
@@ -202,9 +232,57 @@ header .hide-completed {
 
   line-height: 5px;
   font-weight: 100;
-  color: white;
 
   border-radius: 5px;
+}
+
+.accepted {
+  background-color: #e65d25;
+  color: white;
+}
+
+.pending {
+  color: #e65d25;
+  background-color: #ddd;
+}
+
+#add-icon {
+  width: 30px;  
+  margin: 10px;
+}
+
+/*#add-icon2 {
+  width: 50px;
+  float: right; 
+  margin-top: -50px;
+  margin-right: 10px;
+}*/
+
+#addAgreement {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #e65d25;
+  float: right;
+}
+
+.popup {
+
+  display: none;
+
+  background-color: white;
+  position: fixed;
+  width: 480px;
+  top: 140px;
+  margin: 0 auto;
+
+  height: 300px;
+  font-size: 16px;
+  z-index: 1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #shopping-list {
@@ -241,4 +319,6 @@ header .hide-completed {
 #prev {
   float: 
 }
+
+
 
