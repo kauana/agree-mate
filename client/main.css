@@ -183,6 +183,14 @@ header .hide-completed {
   margin-top: -20px;
 }
 
+.back {
+  float: left;
+  width: 40px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+
 #agreement {
 	background-color: #46c3e6;
 }
@@ -501,6 +509,20 @@ button:focus {
 
 #prev {
   float: 
+}
+
+#rent-mock-up {
+  width: 70%;
+  margin: 0 auto;
+  margin-left: 5%;
+  margin-top: 30px;
+}
+
+
+#task-mock-up {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
 
