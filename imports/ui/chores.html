@@ -1,0 +1,53 @@
+<template name="choresPage">
+    <div id="chores-page" class="page">
+       <img src="" id="back">
+      
+       <h2 id="chores-header">Chore Tracker</h2>
+       
+       {{#each chores}} <!--When > 1 week need to change to only show 1-->
+         <!--
+         var d = new Date(); 
+         var n = d.getDay();
+          implement arr that's on w3schools that changes the num to day somewhere-->
+         <!-- print day -->
+         
+         {{> chore}}
+       {{/each}}
+      
+       <div id="addChore">
+         <img id="add-icon" src="/images/add.png">
+       </div>
+      
+       <div id="new-chore-popup" class="popup">
+         <form id ="new-chore-form">
+           <input type="text" name="chore" id="chore-input" placeholder="chore">
+           <input type="checkbox" name="days" value = 0> Monday 
+           <input type="checkbox" name="days" value = 1> Tuesday
+           <input type="checkbox" name="days" value = 2> Wednesday
+           <input type="checkbox" name="days" value = 3> Thursday
+           <input type="checkbox" name="days" value = 4> Friday
+           <input type="checkbox" name="days" value = 5> Saturday
+           <input type="checkbox" name="days" value = 6> Sunday
+         <!-- Add time var for sort later for now just output by order made -->
+         <!-- Using getDay() for viewing next day for now instead of startDay & Week -->
+         <input type="submit" name="create" value="create">
+         </form>
+       </div>
+     </div>
+</template>
+
+<template name="chore"> 
+<!--
+  var d = new Date(); 
+  var n = d.getDay(); This function returns a num 0-6 corresponding to day we must check if this function will return 0 as sunday or monday and change the above template accordingly -->
+  
+  <!--We need to find a spot likely before this template where we print the day based on function above, we also need that var here though -->   
+
+  <!--Using the var n we look at the DaysArr of chores at that pos and see if current day matches/ occurs there
+      if so -> print
+        print the name of chore and the person assigned to it
+      else ->continue  
+  -->
+
+</template>
+        
