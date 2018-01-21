@@ -3,6 +3,8 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
  
 import { Agreements } from '../api/agreements.js';
+
+import { Users } from '../api/users.js';
  
 import './body.html';
 
@@ -44,6 +46,12 @@ Template.agreementPage.helpers({
 	}
 });
 
+Template.agreementPage.events({
+	'click #addAgreement'(e) {
+		document.getElementById("new-agreement-popup").style.display = 'block';
+	},
+});
+
 Template.agreement.helpers({
 	hasChecked() {
 		var ids = Template.currentData().agreedMembers;
@@ -67,6 +75,8 @@ Template.agreement.events({
 	 	agreedMembers = Template.currentData().agreedMembers;
 	 	agreedMembers.push(String(Meteor.userId()));
 
+
+
 	 	agreements = Agreements.find().fetch();
 	 	var id;
 
@@ -79,6 +89,12 @@ Template.agreement.events({
 	 	Agreements.update(id, {
 	      $set: { agreedMembers: agreedMembers },
 	    });
+
+	    if(agreedMembers.length == Users.find().fetch().length) {
+	 		Agreements.update(id, {
+		      $set: { approved: true },
+		    });
+	 	}
 
 	 },
 	 'click #deny-icon'(e) {
