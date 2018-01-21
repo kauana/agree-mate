@@ -2,6 +2,8 @@ import { Meteor } from 'meteor/meteor';
 
 import '../imports/api/agreements.js';	
 
+import '../imports/api/shopping.js';	
+
 import { Accounts } from 'meteor/accounts-base';
 
 import '../imports/api/users.js';

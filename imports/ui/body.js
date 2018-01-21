@@ -19,7 +19,6 @@ import './rent.html';
 import './tasks.html';
 
 Template.body.helpers({
-
 });
 
 Template.body.events({
@@ -171,12 +170,9 @@ Template.agreement.events({
 });
 
 Template.shoppingPage.helpers({
-
-  shoppingList() {
-
-    return ShoppingList.find({});
-
-  },
+	shoppingList() {
+    	return ShoppingList.find({});
+	},
 });
 
 Template.shoppingPage.events({
@@ -194,7 +190,6 @@ Template.tasksPage.helpers({
 
   tasksPage() {
     return tasksPage.find({});
-
   },
 
 });
@@ -210,27 +205,23 @@ Template.tasksPage.events({
         },
 });
 
- Template.ShoppingList.helpers({
+ 
+// Template.ShoppingList.helpers( {
+//    'click #addItem'() {
+//         document.getElementById("new-item-popup").style.display = 'block';
+//     },
 
-   'click #addItem'(){
-
-     document.getElementById("new-item-popup").style.display = 'block';
-Template.ShoppingList.helpers( {
-   'click #addItem'() {
-        document.getElementById("new-item-popup").style.display = 'block';
-    },
-
-    'click #back'(e) {
-         document.getElementById("shopping-page").style.display = 'block';
-         document.getElementById("main").style.display = 'block';
+//     'click #back'(e) {
+//          document.getElementById("shopping-page").style.display = 'block';
+//          document.getElementById("main").style.display = 'block';
 
 
-    'submit #new-item-form'(event) `
-        {
+//     'submit #new-item-form'(event) `
+//         {
 
 
-     // Prevent default browser form submit
-     event.preventDefault();
+//      // Prevent default browser form submit
+//      // event.preventDefault();
 
 
      	// Get value from form element
