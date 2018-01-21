@@ -43,7 +43,6 @@ Template.body.events({
 });
 
 
-
 Template.agreementPage.helpers({
 	agreements() {
 		return Agreements.find({});
@@ -178,7 +177,6 @@ Template.shoppingPage.helpers({
     return ShoppingList.find({});
 
   },
-
 });
 
 Template.shoppingPage.events({
@@ -195,7 +193,6 @@ Template.shoppingPage.events({
 Template.tasksPage.helpers({
 
   tasksPage() {
-
     return tasksPage.find({});
 
   },
@@ -213,38 +210,30 @@ Template.tasksPage.events({
         },
 });
 
-//  ---------------------------------------------------------------------
-// Template.ShoppingList.helpers({
+ Template.ShoppingList.helpers({
 
-//   'click #addItem'(){
+   'click #addItem'(){
 
-//     document.getElementById("new-item-popup").style.display = 'block';
+     document.getElementById("new-item-popup").style.display = 'block';
+Template.ShoppingList.helpers( {
+   'click #addItem'() {
+        document.getElementById("new-item-popup").style.display = 'block';
+    },
 
-//   },
+    'click #back'(e) {
+         document.getElementById("shopping-page").style.display = 'block';
+         document.getElementById("main").style.display = 'block';
 
-  
 
-//   'click #back'(e){
+    'submit #new-item-form'(event) `
+        {
 
-//     document.getElementById("shopping-page").style.display = 
 
-//       'none';
+     // Prevent default browser form submit
+     event.preventDefault();
 
-//     document.getElementById("main").style.display = 'block';
 
-    
-
-//    'submit #new-item-form'(event){
-
-    
-
-//     // Prevent default browser form submit
-
-//     	event.preventDefault();
-
- 
-
-//     	// Get value from form element
+     	// Get value from form element
 
 //     	const target = event.target;
 
