@@ -22,7 +22,7 @@ body {
   max-width: 600px;
   margin: 0 auto;
   min-height: 100%;
-  background: white;
+  background: linear-gradient(0deg,rgba(255,255,255,1),rgba(255,255,255,.5));
 }
  
 header {
@@ -31,6 +31,8 @@ header {
   position: relative;
   font-family: Simplifica;
   font-size: 30px;
+  width: 600px;
+  margin-left: -15px;
 }
  
 #login-buttons {
