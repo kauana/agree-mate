@@ -30,7 +30,17 @@ header {
  
 #login-buttons {
   display: block;
+  float: right;
+  margin-right: -60px;
+  margin-top: 10px; 
 }
+
+#login-buttons a {
+  text-decoration: none !important;
+  font-weight: 100;
+}
+
+
  
 h1 {
   color: white;
@@ -162,8 +172,10 @@ header .hide-completed {
 }
 
 #back {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  float: left;
+  margin-left: -50px;
+  margin-top: -20px;
 }
 
 #agreement {
@@ -173,7 +185,25 @@ header .hide-completed {
 #contract-icon {
   height: 140px;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 40px;
+}
+
+#shopping-icon {
+  height: 120px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+#task-icon {
+  height: 120px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+#utilities-icon {
+  height: 135px;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 #contract-icon-2 {
@@ -192,7 +222,7 @@ header .hide-completed {
 #agreement-page {
   width: 80%;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 45px;
 }
 
 .approved-icon {
@@ -293,7 +323,38 @@ header .hide-completed {
 }
 
 input[type="text"] {
-  height: 20px;
+  height: 40px;
+}
+
+#title-input {
+  width: 140px;
+  margin-left: 20px;
+  margin-top: 10px;
+
+  border-radius: 0px;
+  background-color: #eee;
+  border: 1px solid white;
+
+
+  font-size: 14px;
+  font-weight: 100;
+  padding-left: 15px;
+}
+
+#description-input {
+  float: left;
+  width: 415px;
+  margin-left: 20px;
+  margin-top: 10px;
+
+  border-radius: 0px;
+  background-color: #eee;
+  border: 1px solid white;
+
+
+  font-size: 14px;
+  font-weight: 100;
+  padding-left: 15px;
 }
 
 #shopping-list {
