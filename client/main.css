@@ -1,1 +1,244 @@
-/* CSS declarations go here */
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #6ac7b3;
+  background-attachment: fixed;
+ 
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+ 
+  padding: 0;
+  margin: 0;
+ 
+  font-size: 14px;
+}
+ 
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100%;
+  background: white;
+}
+ 
+header {
+  background-color: #202020;
+  padding: 20px 15px 15px 15px;
+  position: relative;
+}
+ 
+#login-buttons {
+  display: block;
+}
+ 
+h1 {
+  color: white;
+  font-weight: 100;
+  font-size: 1.5em;
+  margin: 0;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-right: 1em;
+}
+ 
+form {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  position: relative;
+}
+ 
+.new-task input {
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding-right: 80px;
+  font-size: 1em;
+}
+ 
+.new-task input:focus{
+  outline: 0;
+}
+ 
+ul {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+ 
+.delete {
+  float: right;
+  font-weight: bold;
+  background: none;
+  font-size: 1em;
+  border: none;
+  position: relative;
+}
+ 
+li {
+  position: relative;
+  list-style: none;
+  padding: 15px;
+  border-bottom: #eee solid 1px;
+}
+ 
+li .text {
+  margin-left: 10px;
+}
+ 
+li.checked {
+  color: #888;
+}
+ 
+li.checked .text {
+  text-decoration: line-through;
+}
+ 
+li.private {
+  background: #eee;
+  border-color: #ddd;
+}
+ 
+header .hide-completed {
+  float: right;
+}
+ 
+.toggle-private {
+  margin-left: 5px;
+}
+ 
+@media (max-width: 600px) {
+  li {
+    padding: 12px 15px;
+  }
+ 
+  .search {
+    width: 150px;
+    clear: both;
+  }
+ 
+  .new-task input {
+    padding-bottom: 5px;
+  }
+}
+
+.page {
+  display: none;
+} 
+
+.wrapper {
+	width: 100%;
+	height: 240px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.nav-button {
+	width: 40%;
+	height: 100%;
+	float: left;
+	margin-left: 6.67%;
+	text-align: center;
+	line-height: 20px;
+  border-radius: 240px;
+}
+
+.nav-button-label {
+	color: white;
+	font-size: 16px;
+	font-weight: 100;
+}
+
+#agreement {
+	background-color: #46c3e6;
+}
+
+#contract-icon {
+  height: 140px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+#contract-icon-2 {
+  margin: 0 auto;
+  margin-top: -40px;
+  width: 30px;
+  height: 30px;
+  float: right;
+}
+
+#agreement-header {
+  color: #e65d25;
+}
+
+#agreement-page {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.status-icon {
+  width: 50px;
+  float: right;
+  margin: 0 auto;
+  margin-top: -55px;  
+}
+
+.agreement {
+  height: 60px;
+ 
+
+  background-color: #e65d25;
+
+  
+  margin-bottom: 20px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 10px;
+
+  line-height: 5px;
+  font-weight: 100;
+  color: white;
+
+  border-radius: 5px;
+}
+
+#shopping-list {
+	background-color: #88c240;
+	/*margin-right: 5%;*/
+}
+
+#tasks {
+	background-color: orange;
+}
+
+#rent-utilities {
+	background-color: #e65d25;
+	/*margin-right: 5%;*/
+}
+
+#day {
+  width: 100%;
+  height: 500px;
+  background-color: red;
+}
+
+.side-bar {
+  float: left;
+  width: 20%;
+  height: 100%;
+}
+
+#next {
+  float: left;
+  
+}
+
+#prev {
+  float: 
+}
+
