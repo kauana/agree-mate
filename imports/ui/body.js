@@ -192,8 +192,28 @@ Template.shoppingPage.events({
 	},
 });
 
+Template.tasksPage.helpers({
 
+  tasksPage() {
 
+    return tasksPage.find({});
+
+  },
+
+});
+
+Template.tasksPage.events({
+        'click #addTask'() {
+                document.getElementById("new-item-popup").style.display = 'block';
+        },
+
+        'click #back'(e) {
+                document.getElementById("tasks-page").classList.add("page");
+                document.getElementById("main").style.display = 'block';
+        },
+});
+
+//  ---------------------------------------------------------------------
 // Template.ShoppingList.helpers({
 
 //   'click #addItem'(){
