@@ -1,6 +1,89 @@
-
 <template name="shoppingPage">
-    <div id="shopping-page" class="page">
-      agreement
-  </div>
+  <div id="shopping-page" class="page">
+    <img src="/images/back.png" id="back">
+
+      <h2 id="shopping-header">Shopping List</h2>
+      <img id="shopping-icon-1" src="shopping_1">
+
+      <h3>Essentials</h3>
+      {{#each shoppingList}}
+        {{> item}}
+      {{/each}}
+
+      <div id="addItem">
+        <img id="add-icon" src="/images/add.png">
+      </div>
+
+      <div id="new-item-popup" class="popup">
+        <form id="new-agreement-form">
+          
+          <div id="form-button-wrapper">
+            <input type="text" name="title" id="title-input" placeholder="title">
+            <img id="cancel-agreement" src="/images/cancel.png">
+            </div>
+          
+          <input type="text" name="description" id="description-input" placeholder="description">
+          <input type="submit" name="create" value="create" id="submit-agreement">
+          
+        </form>
+      </div>
+    </div>
+
+    
 </template>
+
+<template name="item">
+
+  <div class="list-item">
+      
+      {{#unless bought}} <!-- Does this do every item? -->
+        <input type="item" value ="{{itemName}}"><p>{{itemName}}</p>
+      {{/unless}}
+      
+      {{#if bought}}
+        <p style="color:#ddd">{{itemName}}</p>
+      {{/if}}
+    </div>
+    
+    <!-- <div style="margin: 25px 50px 75px 100px">
+      <h3>Additionals</h3>
+      {{#unless bought}}
+        <input type="item" value = {{itemName}}><p>{{itemName}}</p>
+      {{/unless}}
+      
+      {{#if bought}}
+        <p style="color:#ddd">{{itemName}}</p>
+        
+      {{/if}}
+    </div> -->
+</template>
+
+
+<!-- <template name="agreement"> -->
+  
+  <!-- <div id="{{_id}}" class="agreement {{#if approved}}accepted{{else}}pending{{/if}}">
+      <h4>{{title}}</h4>
+      <p>{{description}}</p>
+      <img src=""/>
+      {{#if approved}}
+        <img class="approved-icon" src="/images/approved_1.png"/>
+      {{else}}
+        {{#if hasChecked}}
+          <div id="pending-wrapper">
+            <img class="pending-icon" src="/images/pending.png"/>
+          </div>
+        {{else}}
+          <div id="icon-wrapper">
+            <img id="accept-icon" class="agreement-icon" src="/images/accept-icon.png">
+          </div>
+          <div>
+            <img id="deny-icon" class="agreement-icon" src="/images/deny-icon.png">
+          </div>
+        {{/if}}
+      {{/if}}
+      
+    </div> -->
+
+<!-- </template> --> 
+
+        
