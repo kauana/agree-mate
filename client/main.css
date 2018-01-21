@@ -199,6 +199,15 @@ header .hide-completed {
   margin-top: 60px;
 }
 
+#shopping-icon-1 {
+  width: 80px;
+
+  margin: 0 auto;
+  margin-top: -30px;
+
+  float: left;
+}
+
 #task-icon {
   height: 120px;
   margin: 0 auto;
@@ -293,12 +302,12 @@ header .hide-completed {
   margin: 10px;
 }
 
-/*#add-icon2 {
-  width: 50px;
+#add-icon-1 {
+  width: 20px;
   float: right; 
-  margin-top: -50px;
-  margin-right: 10px;
-}*/
+  margin-top: 5px;
+  margin-right: 5px;
+}
 
 #addAgreement {
   width: 50px;
@@ -328,8 +337,6 @@ header .hide-completed {
 }
 
 input[type="text"] {
-  margin-left: 20px;
-  margin-top: 10px;
 
   border-radius: 0px;
   background-color: #eee;
@@ -341,6 +348,9 @@ input[type="text"] {
 }
 
 #title-input {
+  margin-left: 20px;
+  margin-top: 10px;
+
   width: 140px;
   height: 40px;
   float: left;
@@ -349,6 +359,10 @@ input[type="text"] {
 }
 
 #description-input {
+
+  margin-left: 20px;
+  margin-top: 10px;
+
   float: left;
   width: 415px;
   height: 180px;
@@ -401,21 +415,62 @@ input[type="text"] {
 
 #shopping-header {
   color: #88c240;
-  margin-left: 55px;
+  margin-top:  0px;
+  float: left;
+}
+
+.item-label {
+  float: left;
+  margin-top: 0px;
+  color: black;
+}
+
+input[type="checkbox"] {
+  float: left;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .list-item {
   height: 30px;
-  background-color: lavender;
+  color: black;
+  font-weight: 100;
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+  border-bottom: 1px dashed #eee;
 }
 
+.bought {
+  color: #ccc;
+  text-decoration: line-through;
+}
 
 #addItem {
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 0px;
   background-color: #88c240;
-  float: right;
+  float: left;
+  margin-top: 10px;
+}
+
+#new-item-input {
+  height: 28px;
+  border: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+#new-item-wrapper {
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 #tasks {

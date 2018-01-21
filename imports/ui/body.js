@@ -19,6 +19,7 @@ import './rent.html';
 import './tasks.html';
 
 Template.body.helpers({
+
 });
 
 Template.body.events({
@@ -128,21 +129,15 @@ Template.agreement.events({
 	 		}
 	 	}
 
-	 
-	 	console.log(Agreements.find({}).fetch());
-
 	 	Agreements.update(id, {
 	      $set: { agreedMembers: agreedMembers },
 	    });
 
-	 	console.log(Agreements.find({}).fetch());
 
 	    if(agreedMembers.length == Users.find().fetch().length) {
 	 		Agreements.update(id, {
 		      $set: { approved: true },
 		    });
-
-		    console.log(Agreements.find({}).fetch());
 	 	}
 
 	 },
@@ -184,6 +179,28 @@ Template.shoppingPage.events({
 		document.getElementById("shopping-page").classList.add("page");
 		document.getElementById("main").style.display = 'block';
 	},
+
+	'click #addItem'(e) {
+		// Prevent default browser form submit
+    	event.preventDefault();
+ 
+    	// Get value from form element
+    	const itemName = document.getElementById("new-item-input").value;
+
+    	// Insert a task into the collection
+	    ShoppingList.insert({
+	    	name: itemName,
+	    	bought: false,
+	    	createdAt: new Date(),
+	    	pitchedIn: [],
+	    	type: "essential",
+	    	price: 0,
+   		});
+ 
+    	// Clear form
+    	document.getElementById("new-item-input").value = '';
+    	
+	}
 });
 
 Template.tasksPage.helpers({
@@ -206,77 +223,101 @@ Template.tasksPage.events({
 });
 
  
-// Template.ShoppingList.helpers( {
-//    'click #addItem'() {
-//         document.getElementById("new-item-popup").style.display = 'block';
-//     },
+Template.item.events({
+   'click #addItem'() {
+        document.getElementById("new-item-popup").style.display = 'block';
+    },
 
-//     'click #back'(e) {
-//          document.getElementById("shopping-page").style.display = 'block';
-//          document.getElementById("main").style.display = 'block';
+    'click #back'(e) {
+        document.getElementById("shopping-page").classList.add("page");
+        document.getElementById("main").style.display = 'block';
+
+     },
+
+    'click .item-checkbox'(e){
+	 	
+
+    	var idString = e.target.id;
+    	// idString = idString.slice(10,idString.indexOf("\")"));
+
+	 	var list = ShoppingList.find({}).fetch();
+	 	var id;
+
+	 	for (var i = list.length - 1; i >= 0; i--) {
+	 		if(list[i]._id  == idString) {
+	 			id = list[i]._id;
+	 		}
+	 	}
 
 
-//     'submit #new-item-form'(event) `
-//         {
 
+	 	if(e.target.checked) {
+			ShoppingList.update(id, {
+			    $set: { bought: true, purchasedBy: String(Meteor.userId()) },
+	   		 });
+	 	} else {
+	 		ShoppingList.update(id, {
+			    $set: { bought: false, purchasedBy: "" },
+	   		});
+	 	}
+	 	
 
-//      // Prevent default browser form submit
-//      // event.preventDefault();
+     },
+
+    'submit #new-item-form'(event) {
+
+	}
+     // Prevent default browser form submit
+     // event.preventDefault();
 
 
      	// Get value from form element
 
-//     	const target = event.target;
+    	// const target = event.target;
 
-//     	const item = target.item.value;
+    	// const item = target.item.value;
 
-//       const type = target.type.value;
+     //  const type = target.type.value;
 
-//    	//If it's an extra item person who added is immediately pitched in
-
-
-
-//     	// Insert a task into the collection
-
-//       shoppingList.insert({
-
-//         item: item,
-
-//         type: type,
-
-//       	bought : false,
-
-//       	pitchedIn: [String(Meteor.userId())], //add user who added item if extra item
-
-//       	createdAt : new Date(),
-
-//    		});
-
-    
-
-//       // Clear form
-
-//       target.title.value = '';
-
-//       target.description.value = '';
+   	//If it's an extra item person who added is immediately pitched in
 
 
 
+    	// Insert a task into the collection
 
+     //  shoppingList.insert({
 
-//       //hide pop-up
+     //    item: item,
 
-//       document.getElementById("new-agreement-popup").style.display = 'none';    
+     //    type: type,
 
-//   }
+     //  	bought : false,
+
+     //  	pitchedIn: [String(Meteor.userId())], //add user who added item if extra item
+
+     //  	createdAt : new Date(),
+
+   		// });
 
     
 
-//   },
+      // Clear form
 
-  
+      // target.title.value = '';
 
-// });
+      // target.description.value = '';
+
+
+
+
+
+      //hide pop-up
+
+      // document.getElementById("new-agreement-popup").style.display = 'none';    
+
+  });
+
+    
 
 
 

@@ -2,19 +2,25 @@
   <div id="shopping-page" class="page">
     <img src="/images/back.png" id="back">
 
+      <img id="shopping-icon-1" src="/images/shopping_1.png">
       <h2 id="shopping-header">Shopping List</h2>
-      <!--img id="shopping-icon-1" src="/images/shopping-icon-1.png"> <-->
 
-      <h3>Essentials</h3>
+      <div class="list-item">
+      </div>
       {{#each shoppingList}}
         {{> item}}
       {{/each}}
 
+
+      
+      <div id="new-item-wrapper">
+        <input type="text" name="new-item" id="new-item-input" placeholder="enter an item">
+      </div>
       <div id="addItem">
-        <img id="add-icon" src="/images/add.png">
+        <img id="add-icon-1" src="/images/add.png">
       </div>
 
-      <div id="new-item-popup" class="popup">
+     <!--  <div id="new-item-popup" class="popup">
         <form id="new-agreement-form">
           
           <div id="form-button-wrapper">
@@ -26,7 +32,7 @@
           <input type="submit" name="create" value="create" id="submit-agreement">
           
         </form>
-      </div>
+      </div> -->
     </div>
 
     
@@ -35,27 +41,13 @@
 <template name="item">
 
   <div class="list-item">
-      
-      {{#unless bought}} <!-- Does this do every item? -->
-        <input type="item" value ="{{itemName}}"><p>{{itemName}}</p>
-      {{/unless}}
-      
-      {{#if bought}}
-        <p style="color:#ddd">{{itemName}}</p>
-      {{/if}}
-    </div>
     
-    <!-- <div style="margin: 25px 50px 75px 100px">
-      <h3>Additionals</h3>
-      {{#unless bought}}
-        <input type="item" value = {{itemName}}><p>{{itemName}}</p>
-      {{/unless}}
-      
-      {{#if bought}}
-        <p style="color:#ddd">{{itemName}}</p>
-        
-      {{/if}}
-    </div> -->
+      <input id="{{_id}}" class="item-checkbox" type="checkbox" status="checked" name="item">
+      <p class="item-label {{#if bought}}bought{{/if}}">{{name}}</p>
+
+  </div>
+    
+
 </template>
 
 
